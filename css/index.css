@@ -33,10 +33,12 @@ main{
 
 .menu{
     position: absolute;
-    left: 0;
+    left: 5px;
     bottom: 20px;
     width: 100%;
     display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .menu .to-univer{
@@ -91,7 +93,8 @@ main{
     width: 460px;
     height: 320px;
     border-radius: 10px;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     margin: 54px auto 0;
 }
 
@@ -154,11 +157,40 @@ main{
     width: 50px;
     text-align: center;
 }
+.friend-highlight{
+    color: gold;
+}
 
 .friends-slider{
     width: 536px;
     height: 63px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-image: url('../img/friends-bg.png');
     background-repeat: no-repeat;
     background-size: 100%;
+    padding: 0 10px;
+}
+.slider-viewport{
+    width: 470px;
+    overflow: hidden;
+}
+.slider-wrap{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.slide{
+    width: 50px;
+    height: 51px;
+    flex: 0 0 auto;
+    position: relative
+}
+
+.friends-slider-prev, .friends-slider-next{
+    width: 16px;
+    height: 29px;
+    flex: 0 0 auto;
 }

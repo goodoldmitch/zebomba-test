@@ -88,3 +88,35 @@ modalBlock.addEventListener("click", (event) => {
 closeModalButton.addEventListener('click', ()=> {
     closeModal();
 });
+
+// Слайдер
+
+const sliderBlock = document.querySelector('.friends-slider'),
+      prevButton = sliderBlock.querySelector('.friends-slider-prev'),
+      nextButton = sliderBlock.querySelector('.friends-slider-next'),
+      sliderWrapper = sliderBlock.querySelector('.slider-wrap'),
+      slides = sliderWrapper.querySelectorAll('.slide');
+
+let currentSlideNumber = 1,
+    offset = 0,
+    allSlidesWidth = 50 * slides.length + 10 * (slides.length - 1); // т.к. у нас фиксированный макет, можем так высчитать длину всех слайдов
+  
+  sliderWrapper.style.width = allSlidesWidth + 'px';
+  sliderWrapper.style.transition = '0.3s all';
+      
+nextButton.addEventListener('click', () =>{
+    if(offset < allSlidesWidth - 170){ // прекращаем листать, если во вьюпорте осталось 3 слайда
+        offset += 60;
+        sliderWrapper.style.transform = `translate(-${offset}px)`;
+        console.log(offset , allSlidesWidth);
+    }else(
+        alert('Решил оставлять 3 последних слайда')
+    )
+})
+
+prevButton.addEventListener('click', () =>{
+    if(offset > 0){
+        offset -= 60;
+        sliderWrapper.style.transform = `translate(-${offset}px)`;
+    }
+})
