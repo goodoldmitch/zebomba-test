@@ -186,7 +186,13 @@ main{
     width: 50px;
     height: 51px;
     flex: 0 0 auto;
-    position: relative
+    position: relative;
+}
+
+.add-friend{
+    position: absolute;
+    top: -8px;
+    right: -8px; 
 }
 
 .friends-slider-prev, .friends-slider-next{
